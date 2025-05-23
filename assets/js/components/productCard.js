@@ -33,12 +33,12 @@ export function createProductCard(product) {
     }
 
     card.innerHTML = `
-        <h2>${product.title}</h2>
+        <a href="${product.link}"><h2>${product.title}</h2></a>
         <p><strong>Descrição:</strong> ${product.description}</p>
         <p><strong>Preço:</strong> ${product.price}</p>
         <p><strong>Bateria:</strong> ${product.batteryLife}</p>
         <p><strong>Memória:</strong> ${product.memory}</p>
-    `;
+        `;
     card.insertBefore(imageContainer, card.firstChild);
     return card;
 }
