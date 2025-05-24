@@ -8,7 +8,7 @@ fetch('https://olx-back-end.onrender.com/smartphones/listAll')
     .then(data => {
         const container = document.getElementById('product-container');
         data.forEach(product => {
-            if(product.is_break === true){
+            if(product.break === true){
                 container.appendChild(createProductCard(product));
             }
         });
