@@ -8,7 +8,9 @@ fetch('https://olx-back-end.onrender.com/smartphones/listAll')
     .then(data => {
         const container = document.getElementById('product-container');
         data.forEach(product => {
-            container.appendChild(createProductCard(product));
+            if(product.is_break === true){
+                container.appendChild(createProductCard(product));
+            }
         });
     })
     .catch(error => console.error('Erro ao carregar dados:', error));
