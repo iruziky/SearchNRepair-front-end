@@ -33,12 +33,15 @@ export function createProductCard(product) {
     }
 
     card.innerHTML = `
-        <a href="${product.link}"><h2>${product.title}</h2></a>
-        <p><strong>Descrição:</strong> ${product.description}</p>
-        <p><strong>Preço:</strong> ${product.price}</p>
-        <p><strong>Bateria:</strong> ${product.batteryLife}</p>
-        <p><strong>Memória:</strong> ${product.memory}</p>
-        `;
+        <a href="${product.link}"><h2 class="title">${product.title}</h2></a>
+        <div class="desc-container">
+            <div class="desc-text"><strong>Descrição:</strong> ${product.description}</div>
+        </div>
+        <div class="price"><strong>Preço:</strong> ${product.price}</div>
+        <div class="battery"><strong>Bateria:</strong> ${product.batteryLife}</div>
+        <div class="memory"><strong>Memória:</strong> ${product.memory}</div>
+    `;
+
     card.insertBefore(imageContainer, card.firstChild);
     return card;
 }
